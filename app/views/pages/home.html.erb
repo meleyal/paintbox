@@ -1,0 +1,11 @@
+<% unless signed_in? %>
+  <p><%= link_to "Sign up", signup_path %></p>
+<% end %>
+
+<ul id="paintbox">
+  
+  <%= render  :partial => 'swatches/swatch', 
+              :collection => @swatches, 
+              :locals => { :link => true } %>
+
+</ul>

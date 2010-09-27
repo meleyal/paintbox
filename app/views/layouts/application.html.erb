@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">  
+  <title>paintbox <%= yield(:title) %></title>
+  <%= stylesheet_link_tag 'screen' %>
+  <%= javascript_include_tag 'lib/jquery', 'lib/jscolor/jscolor', 'application' %>
+</head>
+<body>
+
+  <div id="shell">
+
+    <header>
+      <h1><%= link_to "paintbox", root_path %> <%= yield(:title) %></h1>
+    </header>
+
+    <section id="content" class="clearfix">  
+      <% flash.each do |key, value| %>
+        <p class="flash <%= key %>"><%= value %></p>
+      <% end %>
+
+      <%= yield %>    
+    </section>
+
+    <footer>
+      <nav>
+        <%= link_to "About", about_path %>
+        <% if signed_in? %>
+        <%= link_to "Profile",  current_user %>
+        <%= link_to "Settings", edit_user_path(current_user) %>
+        <%= link_to "Sign out", signout_path, :method => :delete %>
+        <% else %>
+        <%= link_to "Sign in ", signin_path %>
+        <% end %>
+      </nav>
+
+
+
+      <%= debug(params) if Rails.env.development? %>    
+    </footer>
+  
+  </div><!--/shell-->
+
+  <%# if (current_user && current_user.admin?) %>
+  <% if false %>
+    <nav class="admin">
+      Admin:
+      <%= link_to "Users", users_path %>          
+    </nav>      
+  <% end %>
+  
+</body>
+</html>

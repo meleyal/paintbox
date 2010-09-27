@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  value: '#fff'
+
+two:
+  id: 2
+  value: '#000'
+
+three:
+  id: 3
+  value: '#FF0000'
+
+four:
+  id: 4
+  value: '#FFFF00'
+
+five:
+  id: 5
+  value: '#9BFF21'
+
+six:
+  id: 6
+  value: '#498B9F'
+
+seven:
+  id: 7
+  value: '#EDD543'
+
+eight:
+  id: 8
+  value: '#A82CD3'
+
+nine:
+  id: 9
+  value: '#ED7D2F'
+
+ten:
+  id: 10
+  value: '#61DF44'

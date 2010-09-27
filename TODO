@@ -1,0 +1,34 @@
+TODO
+----
+
+* ajax create swatch + animate
+    success: add swatch, show success message
+    error: show error message
+    research: rails3 ajax jquery
+
+
+* display preferences
+    circle, square, line, background color
+    set as cookie?
+    load additional stylesheet?
+    or change classes?
+
+
+
+* username for URL + restrict names so they don't overwrite pages (e.g. /about)
+* switch to restful_authentication plugin for login?
+* openid login
+* remember password prompt
+* no dots in username
+* user new + edit (signup + settings) -- share same form
+
+* set color picker value when click on swatch
+* drag + drop for swatches (acts_as_list plugin)
+* standard page title across app (with link)
+* admin menu
+* styles for flash messages - see tada list screenshot
+* style for other screen sizes
+* state for no swatches
+* try other color pickers
+* caching?
+* upgrade to rails 3

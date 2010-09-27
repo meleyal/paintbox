@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  color_id: 1
+  paintbox_id: 1
+  sort_order: 1
+
+two:
+  id: 2
+  color_id: 2
+  paintbox_id: 1
+  sort_order: 2
+
+three:
+  id: 3
+  color_id: 3
+  paintbox_id: 1
+  sort_order: 3  
+  
+four:
+  id: 4
+  color_id: 4 
+  paintbox_id: 1
+  sort_order: 4
+  
+five:
+  id: 5
+  color_id: 5
+  paintbox_id: 1
+  sort_order: 5

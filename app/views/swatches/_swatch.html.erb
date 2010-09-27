@@ -1,0 +1,7 @@
+<li style="background: <%=h swatch.color.value %>">
+  <% if link == true %>
+    <%= link_to h(swatch.color.value), swatch.user, :title => swatch.user.username %>    
+  <% else %>
+    <%=h swatch.color.value %>
+  <% end %>  
+</li>

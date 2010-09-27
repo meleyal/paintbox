@@ -1,0 +1,94 @@
+body {
+	font-family: Helvetica;
+/*	background: #222;*/
+}
+
+h1 a {
+/*	text-decoration: none;*/
+}
+
+a {
+	color: #000;
+}
+
+header, section, footer {
+	display: block;
+}
+
+#content {
+	margin: 3em 0;
+}
+
+footer nav {
+	font-size: 80%;
+	float: right;
+}
+footer nav a {
+	color: #ccc;
+}
+
+#shell {
+	width: 960px;
+/*	width: 85%;*/
+	margin: 65px auto;	
+	position: relative;
+}
+
+#new_swatch {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#paintbox {
+	padding: 0;
+}
+#paintbox li {
+	list-style: none;
+	float: left;
+	display: block;
+	background: #eee;
+	text-indent: -999em;
+	overflow: hidden;
+	height: 30px;
+	width: 30px;	
+	margin: 0 5px 5px 0;
+/*	margin: 0 10px 10px 0;*/
+/*	height: 40px;*/
+/*	width: 40px;*/
+/*	height: 50px;*/
+/*	width: 50px;*/
+/*	height: 10px;*/
+/*	width: 100%;*/
+/*	height: 300px;*/
+/*	-moz-box-sizing:border-box;	*/
+	-moz-border-radius: 50%;
+}
+#paintbox li a {
+	display: block;
+	height: 30px;
+	width: 30px;	
+/*	outline: none;*/
+}
+
+
+nav.admin {
+/*	background: yellow;*/
+	background: #eee;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 5px;
+}
+
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
