@@ -1,10 +1,27 @@
 body {
 	font-family: Helvetica;
 /*	background: #222;*/
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	padding: 3px;
+	font-size: 14px;
+}
+
+h1 {
+	vertical-align: baseline;
 }
 
 h1 a {
-/*	text-decoration: none;*/
+
+	text-decoration: none;
+	padding: 5px 0;
+}
+
+h1 a:hover {
+	border-bottom: 1px dotted #aaa;
 }
 
 a {
@@ -19,30 +36,50 @@ header, section, footer {
 	margin: 3em 0;
 }
 
-footer nav {
+nav {
+	background: #fafafa;
+	padding: 6px 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
 	font-size: 80%;
 	float: right;
-}
-footer nav a {
-	color: #ccc;
+	color: #aaa;
+	border-radius: 0 0 4px 4px;
 }
 
-#shell {
-	width: 960px;
-/*	width: 85%;*/
-	margin: 65px auto;	
+nav a {
+	color: #aaa;
+	text-decoration: none;
+}
+
+#wrap {
+/*	width: 960px;*/
+	width: 70%;
+	margin: 0 auto;	
+	padding: 30px 0;
 	position: relative;
 }
 
 #new_swatch {
 	position: absolute;
-	top: 0;
+	top: 40px;
 	right: 0;
+}
+
+#new_swatch input {
+	font-size: 14px;
+	padding: 6px;
+	border: 0;
+	background: #eee;
+	border: 1px solid #eee;
+/*	border-radius: 1em;*/
 }
 
 #paintbox {
 	padding: 0;
 }
+
 #paintbox li {
 	list-style: none;
 	float: left;
@@ -53,6 +90,7 @@ footer nav a {
 	height: 30px;
 	width: 30px;	
 	margin: 0 5px 5px 0;
+
 /*	margin: 0 10px 10px 0;*/
 /*	height: 40px;*/
 /*	width: 40px;*/
@@ -62,15 +100,18 @@ footer nav a {
 /*	width: 100%;*/
 /*	height: 300px;*/
 /*	-moz-box-sizing:border-box;	*/
-	-moz-border-radius: 50%;
-}
-#paintbox li a {
-	display: block;
-	height: 30px;
-	width: 30px;	
-/*	outline: none;*/
+	/*	-moz-border-radius: 50%;*/
+	border-radius: 50%;
 }
 
+#paintbox li a {
+	display: block;
+/*	height: 30px;*/
+/*	width: 30px;	*/
+/*	outline: none;*/
+	height: 100%;
+	width: 100%;
+}
 
 nav.admin {
 /*	background: yellow;*/
@@ -81,6 +122,32 @@ nav.admin {
 	padding: 5px;
 }
 
+.flash {
+	position: absolute;
+	top: 0;
+	left: 0;
+	float: left;
+	border-radius: 0 0 4px 4px;	
+	margin: 0;
+	padding: 6px 10px;	
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;	
+	color: white;	
+}
+
+.flash.success {
+	background: #7AF35E;
+}
+
+.flash.error {
+	background: #E56757;
+}
+
+.or, .or a {
+	font-size: 12px;
+	color: #aaa;
+}
 
 .clearfix:after {
 	clear: both;

@@ -1,32 +1,25 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
-  def title(page_title)
-    content_for(:title) { "/ #{page_title}" }
-  end
-  
-  # def app_name
-  #   'paintbox'
-  # end
+  #
+  # HTML helpers
+  #
 
-  # def title
+  def page_title
+    unless @title.nil?
+      "/ #{@title}"
+    end
+  end
+
+  
+  
+  # def linked_title
   #   base_title = "paintbox"
   #   if @title.nil?
-  #     link_to("base_title", "root_path")
+  #     link_to root_path, base_title
   #   else
-  #     # "#{base_title} / #{h(@title)}" # escape output
-  #     link_to(base_title, root_path)
+  #     # "<a href='#{root_path}'>#{base_title}</a> / #{@title}"
+  #     link_to root_path, base_title " / fark"
   #   end
   # end
-
-  # def page_title(text)
-  #   "#{app_name} / #{text}"
-  #   # content_for(:title) { page_title }
-  #   # @content_for_title
-  # end
-  # 
-  # def page_heading(text)
-  #   "#{app_name} / #{text}"    
-  # end
-  
+    
 end

@@ -14,26 +14,26 @@ $(document).ready(function() {
 
 	// a fake change
 	
-	$('#new_swatch').submit(function() {
-		
-	  $.ajax({
-      url: $(this).attr("action") + '.js', 
-			type: 'POST',
-			data: $(this).serialize(),
-			dataType: 'html',
-      success: function(item) {
-
-				// var value = $(item).text();
-				// $(item).attr('background', '#fff');				
-				// $(item).css('opacity', 0)
-				// console.log($(item));
-
-				$('#paintbox').prepend(item);
-      }
-		});
-		
-		return false;	
-
-	});
+	// $('#new_swatch').submit(function() {
+	// 	
+	//   $.ajax({
+	//       url: $(this).attr("action") + '.js', 
+	// 		type: 'POST',
+	// 		data: $(this).serialize(),
+	// 		dataType: 'html',
+	//       success: function(item) {
+	// 
+	// 			// var value = $(item).text();
+	// 			// $(item).attr('background', '#fff');				
+	// 			// $(item).css('opacity', 0)
+	// 			// console.log($(item));
+	// 
+	// 			$('#paintbox').prepend(item);
+	//       }
+	// 	});
+	// 	
+	// 	return false;	
+	// 
+	// });
 	
 });

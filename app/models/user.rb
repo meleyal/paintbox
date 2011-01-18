@@ -10,12 +10,12 @@ class User < ActiveRecord::Base
   
   validates_presence_of     :username
   validates_length_of       :username, :maximum => 50
-  validates_format_of       :username, :with => /^[a-z]$/i, :on => :update
-  validates_uniqueness_of   :username, :case_sensitive => false
+  validates_format_of       :username, :with => /\A[a-z]+\z/
+  validates_uniqueness_of   :username, :case_sensitive => true
   
   validates_presence_of     :email
   validates_format_of       :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates_uniqueness_of   :email, :case_sensitive => false
+  validates_uniqueness_of   :email, :case_sensitive => true
 
   validates_presence_of     :password
   validates_length_of       :password, :within => 6..40
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   # class methods
 
   def self.find_by_identifier(identifier)
-    find(:first, :conditions => ['id = ? OR username = ?', identifier, identifier])
+    User.where(['id = ? OR username = ?', identifier, identifier]).first()      
   end
 
   def self.authenticate(email, submitted_password)
@@ -35,12 +35,19 @@ class User < ActiveRecord::Base
     return nil if user.nil?
     return user if user.has_password?(submitted_password)    
   end
+  
+  def self.authenticate_with_salt(id, cookie_salt)
+    user = find_by_id(id)
+    (user && user.salt == cookie_salt) ? user : nil
+  end
 
   # instance methods?
 
   def to_param 
     # "#{id}-#{username}"
-    username || id
+    # username || id
+    username
+    # "#{self.username}"
   end
   
   # return true if stored password matches submitted password

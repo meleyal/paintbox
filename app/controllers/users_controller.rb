@@ -14,23 +14,24 @@ class UsersController < ApplicationController
     @user = User.find_by_identifier(params[:id])
     @swatches = @user.swatches.all(:order => 'created_at DESC', :include => :color)
     @swatch = Swatch.new if signed_in?    
+    @title = @user.username
   end
   
   def new
+    @title = "sign up"
     @user = User.new
   end
   
   def edit
-    # @user = User.find(params[:id])
-    # @user = User.find_by_username(params[:id])
-    @user = User.find_by_identifier(params[:id])    
+    @title = "settings"
+    # @user = User.find_by_identifier(params[:id]) # provided by before_filter :correct_user
   end
   
   def create
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "welcome to paintbox"
+      flash[:success] = "welcome to paintbox.es"
       redirect_to @user
     else
       render "new"
@@ -48,8 +49,6 @@ class UsersController < ApplicationController
   end
   
   def destroy    
-    # User.find(params[:id]).destroy
-    # User.find_by_username(params[:id]).destroy
     User.find_by_identifier(params[:id]).destroy        
     flash[:success] = "user destroyed"
     redirect_to users_path
@@ -58,9 +57,7 @@ class UsersController < ApplicationController
   private
         
     def correct_user
-      # @user = User.find(params[:id])
-      # @user = User.find_by_username(params[:id])      
-      @user = User.find_by_identifier(params[:id])    
+      @user = current_user || User.find_by_identifier(params[:id])    
       redirect_to(root_path) unless current_user?(@user)
     end
 

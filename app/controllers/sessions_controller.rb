@@ -1,23 +1,27 @@
 class SessionsController < ApplicationController
+
+  def new
+    @title = "login"
+  end
   
   def create
-    user = User.authenticate( params[:session][:email],
-                              params[:session][:password] )
+    user = User.authenticate(params[:session][:email],
+                             params[:session][:password])
         
     if user.nil?
-      # create an error and re-render the signin form
-      flash.now[:error] = "Invalid email/password combination"
-      @title = "Sign in"
+      flash.now[:error] = "Invalid email / password"
+      @title = "sign in"
       render "new"
     else
-      # signin the user and redirect to the users show page
       sign_in user
-      redirect_to user
+      flash[:success] = "Hello!"      
+      redirect_back_or user
     end        
   end
   
   def destroy
     sign_out
+    flash[:success] = "Bye!"
     redirect_to root_path
   end
 

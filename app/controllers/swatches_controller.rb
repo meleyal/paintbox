@@ -7,7 +7,7 @@ class SwatchesController < ApplicationController
     @swatch = current_user.swatches.build(:color_id => color.id)
 
     if @swatch.save
-      flash[:success] = "Swatch created"
+      flash[:success] = "Saved"
     else
       flash[:error] = color.errors.empty? ? "Error" : color.errors.full_messages.to_sentence                    
     end

@@ -1,11 +1,8 @@
-<% form_for @swatch do |f| %>
+<%= form_for @swatch do |f| %>
 
-  <%= f.error_messages %>
-
-  <% f.fields_for :colors do |c| %>
+  <%= f.fields_for :colors do |c| %>
   <p>
-    <%= c.text_field :value, :class => 'color {hash:true}', :size => 7, :maxlength => 7 %>    
-    <%= f.submit "Add" %>    
+    <%= c.text_field :value, :class => 'color {hash:true}', :size => 7, :maxlength => 7 %><%= f.submit "Add" %>    
   </p>
   <% end %>
 

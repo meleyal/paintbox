@@ -1,6 +1,19 @@
-<% form_for(@user) do |f| %>
+<%= form_for(@user) do |f| %>
 
-  <%= f.error_messages %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> 
+          prohibited this <%= @user.class.to_s.underscore.humanize.downcase %> 
+          from being saved:</h2>
+      <p>There were problems with the following fields:</p>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= f.label :username %><br>
     <%= f.text_field :username %>
@@ -18,7 +31,7 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p>
-    <%= f.submit "Sign up" %>
+    <%= f.submit "OK" %>
   </p>
 
 <% end %>

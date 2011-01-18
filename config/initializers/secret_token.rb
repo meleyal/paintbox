@@ -2,6 +2,6 @@
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
-# Make sure the secret is at least 30 characters and all random, 
+# Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ActionController::Base.cookie_verifier_secret = '56a8726391b65720dce8518e62269a53f054e9af7dd7725d605dc12789fde2d4059a2aa097bc2219b09522ecbe17a8777c409198b567342d6ddfbeb6e0ae43bf';
+Paintbox::Application.config.secret_token = '1f6f6fd0eab971c6b04f1c18bf011e69f13190127ca73a2bd44fa468fcd9802e9977378b3061a65652fb48ec7f008c038b03897b791389d948b4a9890d249cc1'

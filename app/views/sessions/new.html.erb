@@ -1,6 +1,4 @@
-<% title "sign in" %>
-
-<% form_for(:session, :url => sessions_path) do |f| %>  
+<%= form_for(:session, :url => sessions_path) do |f| %>  
   <p>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
@@ -10,10 +8,6 @@
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.submit "Sign in" %>
+    <%= f.submit "Sign in" %> <span class="or">or <%= link_to "sign up", signup_path %></span>
   </p>  
 <% end %>
-
-<p>
-  new? <%= link_to "sign up", signup_path %>
-</p>
