@@ -1,16 +1,15 @@
 TODO
 ----
 
-
-* rails upgrade checks (rake -T)
-
-* commit
-
-* tag rails 2 (prev rev)
-
 * signup + settings form, error messages
 
 * clean up stylesheet
+
+* restrict access to user admin
+
+* favicon design
+
+* textile for about page
 
 
 
@@ -27,6 +26,8 @@ TODO
 * signup user flow > state for no swatches
 
 * add favorite color to signup
+
+* write README
 
 * user admin
 

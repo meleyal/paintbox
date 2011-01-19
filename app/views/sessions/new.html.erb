@@ -1,13 +1,9 @@
-<%= form_for(:session, :url => sessions_path) do |f| %>  
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.submit "Sign in" %> <span class="or">or <%= link_to "sign up", signup_path %></span>
-  </p>  
+<%= simple_form_for(:session, :url => sessions_path) do |f| %>  
+  
+  <ol>
+    <%= f.input :email %>
+    <%= f.input :password %>
+    <%= f.button :submit, :value => "Sign in" %> <span class="or">or <%= link_to "sign up", signup_path %></span>
+  </ol>
+
 <% end %>

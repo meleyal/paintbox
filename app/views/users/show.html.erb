@@ -4,7 +4,6 @@
 
 <% unless @user.swatches.empty? %>
   <ul id="paintbox">
-    <%# render  :partial => 'swatches/swatch', :collection => @swatches, :locals => { :link => false } %>    
     <%= render @swatches %>
   </ul>  
 <% end %>

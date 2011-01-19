@@ -1,11 +1,9 @@
-<% title "users" %>
-
 <ul>
   <% @users.each do |user| %>
   <li>
     <%= link_to h(user.username), user %>
     <% if (current_user && current_user.admin?) %>
-    | <%= link_to "delete", user_path(user), :method => :delete, :confirm => "Are you sure?" %>
+    / <%= link_to "delete", user_path(user), :class => "delete", :method => :delete, :confirm => "Are you sure?" %>
     <% end %>
   </li>
   <% end %>

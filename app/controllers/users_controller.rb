@@ -34,6 +34,7 @@ class UsersController < ApplicationController
       flash[:success] = "welcome to paintbox.es"
       redirect_to @user
     else
+      flash[:error] = "error"
       render "new"
     end
   end
@@ -44,13 +45,16 @@ class UsersController < ApplicationController
       flash[:success] = "profile udpated"
       redirect_to @user
     else
+      # flash[:error] = "error (#{@user.errors.count})"
+      flash[:error] = "error"      
       render "edit"
+      # redirect_to settings_path
     end
   end
   
   def destroy    
     User.find_by_identifier(params[:id]).destroy        
-    flash[:success] = "user destroyed"
+    flash[:success] = "user deleted"
     redirect_to users_path
   end
   

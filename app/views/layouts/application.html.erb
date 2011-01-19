@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">  
   <title>paintbox.es <%= page_title %></title>
-  <link rel="icon" href="/images/favicon.png" type="image/png"/> 
+  <link rel="icon" href="/images/favicon.png" type="image/png"> 
   <%= stylesheet_link_tag 'screen' %>
-  <%= javascript_include_tag 'lib/jquery', 'lib/jscolor/jscolor', 'application' %>
+  <%= javascript_include_tag 'jquery', 'rails', 'lib/jscolor/jscolor', 'application' %>
+  <%= csrf_meta_tag %>  
 </head>
 <body>
 
@@ -13,6 +14,12 @@
 
     <% flash.each do |key, value| %>
       <p class="flash <%= key %>"><%= value %></p>
+    <% end %>
+
+    <% if (current_user && current_user.admin?) %>
+      <nav class="admin">
+        <strong>Admin:</strong> <%= link_to "Users", users_path, :class => "admin" %>
+      </nav>
     <% end %>
 
     <nav>
@@ -31,25 +38,14 @@
       <h1><%= link_to("paintbox.es", root_path) %> <%= page_title %></h1>
     </header>
 
-    <section id="content" class="clearfix">  
-
-
+    <section id="content" class="clearfix">
       <%= yield %>    
+      <%# debug(params) if Rails.env.development? %>          
     </section>
-
-    <footer>
-      <%# debug(params) if Rails.env.development? %>    
-    </footer>
   
-  </div><!--/shell-->
+  </div><!--/wrap-->
 
-  <%# if (current_user && current_user.admin?) %>
-  <% if false %>
-    <nav class="admin">
-      Admin:
-      <%= link_to "Users", users_path %>          
-    </nav>      
-  <% end %>
+
   
 </body>
 </html>
