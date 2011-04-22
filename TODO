@@ -1,43 +1,48 @@
-TODO
-----
-
-* signup + settings form, error messages
-
-* clean up stylesheet
-
-* restrict access to user admin
-
-* favicon design
-
-* textile for about page
+TODO:
 
 
 
+✓ only do backbone stuff on user page
+
+✓ dont do rails rendering
+
+- only get swatches for this user from URL
+
+
+
+Backbone
+
+  Model
+    swatch model
+    swatch collection == paintbox?
+
+  View
+    paintbox
+    swatch
+
+
+
+populate/refresh the paintbox collection on initial render
+
+bind 
+
+loop through + create a swatch for each
 
 
 
 
-* cross-browser check, CSS3
-
-* validate format of usernames (no dots)
-
-* set color picker value when click on swatch + focus (copy to clipboard? > flash)
-
-* signup user flow > state for no swatches
-
-* add favorite color to signup
-
-* write README
-
-* user admin
-
-* ajax create swatch + animate
-    success: add swatch, show success message
-    error: show error message
-    research: rails3 ajax jquery
-
-* display preferences
-    circle, square, line, background color
-    set as cookie?
-    load additional stylesheet?
-    or change classes?
+- drag + drop colors
+- delete colors
+- make it clear you can click the color picker
+- welcome message / blank slate
+- validate format of usernames (no dots)
+- shorter urls for users /:username or /u/:username
+- how to make home / profile difference clear?
+- favicon design
+- backbone - coffeescript! / ajax
+- cross-browser check, CSS3
+- set color picker value when click on swatch + focus (copy to clipboard? > flash)
+- signup user flow > state for no swatches
+- write README
+- How to license OS rails app?
+- devise for login

@@ -1,0 +1,21 @@
+
+
+p  a  i  n  t  b  o  x
+•  •  •  •  •  •  •  •
+
+
+Paintbox is a simple web app for saving and sharing colors:
+http://paintbox.heroku.com
+
+To suggest a feature, report a bug, or general discussion:
+https://github.com/meleyal/paintbox/issues
+
+Thanks to muxtape for the inspiration:
+http://muxtape.com
+
+MIT License:
+Copyright (c) 2011 William Meleyal
+With the exception of various included works, which may be restricted 
+by other licenses, Paintbox may be freely distributed under the MIT license.
+http://www.opensource.org/licenses/mit-license
+

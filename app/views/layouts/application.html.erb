@@ -2,49 +2,54 @@
 <html>
 <head>
   <meta charset="utf-8">  
+  <%= csrf_meta_tag %>  
+
   <title>paintbox.es <%= page_title %></title>
   <link rel="icon" href="/images/favicon.png" type="image/png"> 
-  <%= stylesheet_link_tag 'screen' %>
-  <%= javascript_include_tag 'jquery', 'rails', 'lib/jscolor/jscolor', 'application' %>
-  <%= csrf_meta_tag %>  
+
+  <%= include_stylesheets :common %>
+  <%= yield :stylesheets %>  
+  
+  <%= include_javascripts :common %>
+  <%= yield :javascripts %>
 </head>
-<body>
+<body data-id="<%= params[:id] %>">
 
   <div id="wrap">
 
-    <% flash.each do |key, value| %>
-      <p class="flash <%= key %>"><%= value %></p>
-    <% end %>
-
-    <% if (current_user && current_user.admin?) %>
-      <nav class="admin">
-        <strong>Admin:</strong> <%= link_to "Users", users_path, :class => "admin" %>
-      </nav>
-    <% end %>
-
-    <nav>
-      <%= link_to "About", about_path %> /
-      <% if signed_in? %>
-        <%= link_to "Profile", current_user %> /        
-        <%= link_to "Settings", settings_path %> /        
-        <%= link_to "Logout", logout_path, :method => :delete %>
-      <% else %>
-        <%= link_to "Login ", login_path %> / 
-        <%= link_to "Sign up", signup_path %>
-      <% end %>
-    </nav>
-
     <header>
       <h1><%= link_to("paintbox.es", root_path) %> <%= page_title %></h1>
+      
+      <% flash.each do |key, value| %>
+        <p class="flash <%= key %>"><%= value %></p>
+      <% end %>
+
+      <% if (current_user && current_user.admin?) %>
+        <nav class="admin">
+          <strong>Admin:</strong> <%= link_to "Users", users_path, :class => "admin" %>
+        </nav>
+      <% end %>
+
+      <nav>
+        <%= link_to "About", 'https://github.com/meleyal/paintbox#readme' %> /
+        <% if signed_in? %>
+          <%= link_to "Profile", current_user %> /        
+          <%= link_to "Settings", settings_path %> /        
+          <%= link_to "Logout", logout_path, :method => :delete %>
+        <% else %>
+          <%= link_to "Login ", login_path %> / 
+          <%= link_to "Sign up", signup_path %>
+        <% end %>
+      </nav>      
     </header>
 
-    <section id="content" class="clearfix">
+    <section id="content" class="group">
       <%= yield %>    
       <%# debug(params) if Rails.env.development? %>          
     </section>
   
   </div><!--/wrap-->
-
+  
 
   
 </body>

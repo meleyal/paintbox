@@ -9,8 +9,10 @@ module ApplicationHelper
       "/ #{@title}"
     end
   end
-
   
+  def txt(text)
+    raw textilize text
+  end
   
   # def linked_title
   #   base_title = "paintbox"

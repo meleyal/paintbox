@@ -9,10 +9,10 @@ class UsersController < ApplicationController
   end
   
   def show
-    # @user = User.find(params[:id])
-    # @user = User.find_by_username(params[:id])
     @user = User.find_by_identifier(params[:id])
     @swatches = @user.swatches.all(:order => 'created_at DESC', :include => :color)
+    # @swatches = @user.swatches.all
+    
     @swatch = Swatch.new if signed_in?    
     @title = @user.username
   end
@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   
   def edit
     @title = "settings"
-    # @user = User.find_by_identifier(params[:id]) # provided by before_filter :correct_user
   end
   
   def create
@@ -40,15 +39,12 @@ class UsersController < ApplicationController
   end
   
   def update
-    # @user = User.find(params[:id]) # provided by before_filter :correct_user
     if @user.update_attributes(params[:user])
       flash[:success] = "profile udpated"
       redirect_to @user
     else
-      # flash[:error] = "error (#{@user.errors.count})"
       flash[:error] = "error"      
       render "edit"
-      # redirect_to settings_path
     end
   end
   

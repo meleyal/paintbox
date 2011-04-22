@@ -2,18 +2,7 @@
 
 <li style="background: <%= swatch.color.value %>">
   <% if link %>
-    <%# link_to swatch.color.value, swatch.user %>    
-    <%# link_to swatch.color.value, user_path(swatch.user), :title => swatch.user.username %>    
-
-    <%# link_to swatch.color.value, user_path(:username => 'meleyal') %>    
-    <%# link_to swatch.color.value, user_path(:id => 'meleyal') %>    
-
     <%= link_to swatch.color.value, user_path(:id => swatch.user.username), :title => swatch.user.username %>        
-    <%# link_to swatch.color.value, user_path(:username => swatch.user.username) %>            
-
-    <%# debug swatch.user %>
-
-
   <% else %>
     <%= swatch.color.value %>
   <% end %>  

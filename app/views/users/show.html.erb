@@ -1,9 +1,15 @@
+<% content_for :javascripts do %>
+  <%= include_javascripts :profile %>
+<% end %>
+
+
 <% if signed_in? && (@user == current_user) %>
   <%= render 'swatches/form' %>
 <% end %>  
 
-<% unless @user.swatches.empty? %>
+<%# unless @user.swatches.empty? %>
   <ul id="paintbox">
-    <%= render @swatches %>
+    <%# render @swatches %>    
   </ul>  
-<% end %>
+<%# end %>
+

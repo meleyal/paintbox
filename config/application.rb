@@ -33,6 +33,10 @@ module Paintbox
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
+    # When JSON-encoding a record, don't wrap the attributes in a hash where the
+    # key is named after the model
+    config.active_record.include_root_in_json = false
+
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
