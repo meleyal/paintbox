@@ -1,32 +1,16 @@
 TODO:
 
 
+- BB event for add swatch
+
+
+
 
 ✓ only do backbone stuff on user page
 
 ✓ dont do rails rendering
 
-- only get swatches for this user from URL
 
-
-
-Backbone
-
-  Model
-    swatch model
-    swatch collection == paintbox?
-
-  View
-    paintbox
-    swatch
-
-
-
-populate/refresh the paintbox collection on initial render
-
-bind 
-
-loop through + create a swatch for each
 
 
 

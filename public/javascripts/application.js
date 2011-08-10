@@ -1,5 +1,53 @@
 $(function(){
 
+	//
+	// Models
+	//
+	
+  var Swatch = Backbone.Model.extend({
+		url: '/swatches'
+  });
+
+
+  var Swatches = Backbone.Collection.extend({
+    model: Swatch,
+		url: '/swatches'
+  });
+
+
+  var Paintbox = Backbone.Model.extend({
+    initialize: function() {
+      this.swatches = new Swatches();
+      this.swatches.url = '/users/' + this.id + '/swatches';      
+      this.view = new PaintboxView({ el: "#paintbox", collection: this.swatches });
+    }
+  });
+
+	//
+	// Views
+	//
+  
+	var AppView = Backbone.View.extend({
+	
+		el: $('body'),
+
+		events: {
+			'submit #new_swatch' : 'addSwatch'			
+		},
+		
+		addSwatch: function(e){
+			e.preventDefault();
+			var val = $('#swatch_colors_value').val();			
+			var data = { swatch: { colors: { value: val } } };
+			$(data).serializeObject();
+			var s = new Swatch(data);
+			s.save(null, { success: function(){
+				Inbox.swatches.fetch();
+			}});
+		}
+	
+	});
+	
   var PaintboxView = Backbone.View.extend({
 
     tagName: 'ul',  
@@ -8,6 +56,7 @@ $(function(){
     initialize: function(options){
       _.bindAll(this, 'refresh');     
       this.collection.bind('refresh', this.refresh);
+      this.collection.bind('add', this.refresh);
       this.collection.fetch();    
     },
 
@@ -21,7 +70,7 @@ $(function(){
 
   });
   
-  
+ 
   var SwatchView = Backbone.View.extend({
 
     tagName: 'li',
@@ -37,35 +86,7 @@ $(function(){
 
   });
 
-  
-
-  var Swatch = Backbone.Model.extend({
-
-    initialize: function(){}  
-
-  });
-
-
-  var Swatches = Backbone.Collection.extend({
-
-    model: Swatch,
-
-    initialize: function(options){}
-
-  });
-
-
-  var Paintbox = Backbone.Model.extend({
-
-    initialize: function() {
-      this.swatches = new Swatches;
-      this.swatches.url = '/users/' + this.id + '/swatches';      
-      this.view = new PaintboxView({ el: "#paintbox", collection: this.swatches });
-    }
-
-  });
-
   var Inbox = new Paintbox({ id: $('body').data('id') });
-
+	var App = new AppView();
   
 });

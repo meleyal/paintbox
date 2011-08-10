@@ -31,15 +31,15 @@
       <% end %>
 
       <nav>
-        <%= link_to "About", 'https://github.com/meleyal/paintbox#readme' %> /
         <% if signed_in? %>
           <%= link_to "Profile", current_user %> /        
           <%= link_to "Settings", settings_path %> /        
-          <%= link_to "Logout", logout_path, :method => :delete %>
+          <%= link_to "Logout", logout_path, :method => :delete %> /
         <% else %>
           <%= link_to "Login ", login_path %> / 
-          <%= link_to "Sign up", signup_path %>
+          <%= link_to "Sign up", signup_path %> /
         <% end %>
+        <%= link_to "About", 'https://github.com/meleyal/paintbox#readme' %>
       </nav>      
     </header>
 

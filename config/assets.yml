@@ -6,6 +6,7 @@ javascripts:
     - public/vendor/rails.js
   profile:
     - public/vendor/jscolor/jscolor.js
+    - public/vendor/jquery.ba-serializeobject.min.js
     - public/javascripts/application.js
     # - public/javascripts/models/swatch.js
     # - public/javascripts/views/paintbox.js
