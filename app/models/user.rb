@@ -26,9 +26,9 @@ class User < ActiveRecord::Base
 
   # class methods
 
-  def self.find_by_identifier(identifier)
-    User.where(['id = ? OR username = ?', identifier, identifier]).first()      
-  end
+  # def self.find_by_identifier(identifier)
+  #   User.where(['id = ? OR username = ?', identifier, identifier]).first()      
+  # end
 
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)

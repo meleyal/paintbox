@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find_by_identifier(params[:id])
+    @user = User.find_by_username(params[:id])
     @swatches = @user.swatches.all(:order => 'created_at DESC', :include => :color)
     # @swatches = @user.swatches.all
     
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   end
   
   def destroy    
-    User.find_by_identifier(params[:id]).destroy        
+    User.find_by_username(params[:id]).destroy        
     flash[:success] = "user deleted"
     redirect_to users_path
   end
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   private
         
     def correct_user
-      @user = current_user || User.find_by_identifier(params[:id])    
+      @user = current_user || User.find_by_username(params[:id])    
       redirect_to(root_path) unless current_user?(@user)
     end
 

@@ -3,7 +3,7 @@ class SwatchesController < ApplicationController
   # before_filter :authenticate
 
   def index
-    @user = User.find_by_identifier(params[:user_id])
+    @user = User.find_by_username(params[:user_id])
     if @user.nil?
       @swatches = Swatch.all.to_json(:order => 'created_at DESC', :include => :color)
     else
