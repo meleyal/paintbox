@@ -34,13 +34,11 @@ GEM
       activesupport (= 3.0.9)
     activesupport (3.0.9)
     arel (2.0.10)
-    awesome_print (0.4.0)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faker (0.9.5)
       i18n (~> 0.4)
-    hirb (0.5.0)
     i18n (0.5.0)
     jammit (0.6.3)
       yui-compressor (>= 0.9.3)
@@ -81,7 +79,6 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    wirble (0.1.3)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -90,11 +87,8 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  awesome_print
   faker
-  hirb
   jammit
   rails
   simple_form
   sqlite3
-  wirble
