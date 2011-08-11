@@ -13,7 +13,7 @@
 var jscolor = {
 
 
-	dir : '/vendor/jscolor/', // location of jscolor directory (leave empty to autodetect)
+	dir : '/assets/jscolor/', // location of jscolor directory (leave empty to autodetect)
 	bindClass : 'color', // class name
 	binding : true, // automatic binding via <input class="...">
 	preloading : true, // use image preloading?

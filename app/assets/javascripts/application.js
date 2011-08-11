@@ -1,92 +1,12 @@
-$(function(){
-
-	//
-	// Models
-	//
-	
-  var Swatch = Backbone.Model.extend({
-		url: '/swatches'
-  });
-
-
-  var Swatches = Backbone.Collection.extend({
-    model: Swatch,
-		url: '/swatches'
-  });
-
-
-  var Paintbox = Backbone.Model.extend({
-    initialize: function() {
-      this.swatches = new Swatches();
-      this.swatches.url = '/users/' + this.id + '/swatches';      
-      this.view = new PaintboxView({ el: "#paintbox", collection: this.swatches });
-    }
-  });
-
-	//
-	// Views
-	//
-  
-	var AppView = Backbone.View.extend({
-	
-		el: $('body'),
-
-		events: {
-			'submit #new_swatch' : 'addSwatch'			
-		},
-		
-		addSwatch: function(e){
-			e.preventDefault();
-			var val = $('#swatch_colors_value').val();			
-			var data = { swatch: { colors: { value: val } } };
-			$(data).serializeObject();
-			var s = new Swatch(data);
-			s.save(null, { success: function(){
-				Inbox.swatches.fetch();
-			}});
-		}
-	
-	});
-	
-  var PaintboxView = Backbone.View.extend({
-
-    tagName: 'ul',  
-    id: 'paintbox',
-
-    initialize: function(options){
-      _.bindAll(this, 'refresh');     
-      this.collection.bind('refresh', this.refresh);
-      this.collection.bind('add', this.refresh);
-      this.collection.fetch();    
-    },
-
-    refresh: function(){
-      $(this.el).html('');
-      var views = this.collection.map(function(m){
-        return (new SwatchView({ model : m })).el;
-      });
-      $(this.el).append(views);
-    }
-
-  });
-  
- 
-  var SwatchView = Backbone.View.extend({
-
-    tagName: 'li',
-    className: 'swatch',
-
-    initialize: function(){
-      this.render();
-    },
-
-    render: function(){
-      $(this.el).css('background', this.model.get('color').value);
-    }
-
-  });
-
-  var Inbox = new Paintbox({ id: $('body').data('id') });
-	var App = new AppView();
-  
-});
+// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+//= require jquery
+//= require jquery_ujs
+//= require backbone-rails
+//= require jquery.ba-serializeobject.min.js
+//= require jscolor/jscolor.js
+//= require_tree .
