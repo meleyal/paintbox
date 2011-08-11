@@ -1,28 +1,16 @@
 TODO:
 
-
-- BB event for add swatch
-
-
-
-
-✓ only do backbone stuff on user page
-
-✓ dont do rails rendering
-
-
-
-
+- rails 3.1
 
 
 - drag + drop colors
 - delete colors
+- favicon design
 - make it clear you can click the color picker
 - welcome message / blank slate
 - validate format of usernames (no dots)
 - shorter urls for users /:username or /u/:username
 - how to make home / profile difference clear?
-- favicon design
 - backbone - coffeescript! / ajax
 - cross-browser check, CSS3
 - set color picker value when click on swatch + focus (copy to clipboard? > flash)

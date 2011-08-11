@@ -5,15 +5,12 @@
   <%= csrf_meta_tag %>  
 
   <title>paintbox.es <%= page_title %></title>
-  <link rel="icon" href="/images/favicon.png" type="image/png"> 
+  <link rel="icon" href="/assets/favicon.png" type="image/png"> 
 
-  <%= include_stylesheets :common %>
-  <%= yield :stylesheets %>  
-  
-  <%= include_javascripts :common %>
-  <%= yield :javascripts %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
 </head>
-<body data-id="<%= params[:id] %>">
+<body id="<%= @page_id %>" data-id="<%= params[:id] %>">
 
   <div id="wrap">
 
@@ -49,8 +46,6 @@
     </section>
   
   </div><!--/wrap-->
-  
-
   
 </body>
 </html>

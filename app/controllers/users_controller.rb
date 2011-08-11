@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     
     @swatch = Swatch.new if signed_in?    
     @title = @user.username
+    @page_id = "profile"
   end
   
   def new

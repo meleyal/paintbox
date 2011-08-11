@@ -1,8 +1,3 @@
-<% content_for :javascripts do %>
-  <%= include_javascripts :profile %>
-<% end %>
-
-
 <% if signed_in? && (@user == current_user) %>
   <%= render 'swatches/form' %>
 <% end %>  
@@ -12,4 +7,3 @@
     <%# render @swatches %>    
   </ul>  
 <%# end %>
-
