@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'backbone-rails'
 
 group :development do
+  gem 'heroku'
   gem 'sqlite3'
 end
 

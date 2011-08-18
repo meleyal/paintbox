@@ -1,6 +1,5 @@
 TODO:
 
-- test 3.1 on heroku
 
 - cleanup
 
@@ -12,7 +11,7 @@ TODO:
 
 
 
-
+- test 3.1 on heroku (migrate to cedar)
 - drag + drop colors
 - delete colors
 - favicon design
