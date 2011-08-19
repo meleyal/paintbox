@@ -4,16 +4,8 @@ class SwatchesController < ApplicationController
 
   def index
     @user = User.find_by_username(params[:user_id])
-    if @user.nil?
-      @swatches = Swatch.all.to_json(:order => 'created_at DESC', :include => :color)
-    else
-      @swatches = @user.swatches.all.to_json(:order => 'created_at DESC', :include => :color)
-    end
+    @swatches = @user.swatches.to_json(:order => 'created_at desc', :include => :color)
     render :json => @swatches
-  end
-  
-  def show
-    render :json => Swatch.find(params[:id])
   end
   
   def create    

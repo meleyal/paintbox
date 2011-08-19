@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
 
   def home
-    @swatches = Swatch.all(:limit => 500, :order => 'created_at DESC', :include => [:user, :color])
-    # @swatches = Swatch.all()
+    @swatches = Swatch.recent.includes(:user, :color)
   end
 
   def about

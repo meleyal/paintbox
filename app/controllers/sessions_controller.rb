@@ -9,19 +9,19 @@ class SessionsController < ApplicationController
                              params[:session][:password])
         
     if user.nil?
-      flash.now[:error] = "Invalid email / password"
+      flash.now[:error] = t(:"flash.sign_in_error")
       @title = "sign in"
       render "new"
     else
       sign_in user
-      flash[:success] = "Hello!"      
-      redirect_back_or user
+      flash[:success] = t(:"flash.sign_in")
+      redirect_to user_path(user.username)
     end        
   end
   
   def destroy
     sign_out
-    flash[:success] = "Bye!"
+    flash[:success] = t(:"flash.sign_out")
     redirect_to root_path
   end
 

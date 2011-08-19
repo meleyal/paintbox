@@ -1,29 +1,46 @@
 TODO:
 
 
-- cleanup
-
 - api design
 
+  http basic vs OAuth
+    
+  All API access is over HTTPS, 
+  and accessed from the api.paintbox.es domain. 
+  All data is sent and received as JSON.
+  
+  paintbox.es/api/method
+  api.paintbox.es/method
+
+  public
+    GET /swatches
+    GET /users/:user/swatches
+    GET /colors
+    
+  auth
+    GET     /user/swatches
+    POST    /user/swatches (single or array)
+    DELETE  /user/swatches (single or array)
+    
+
+
+  get swatches for current user
+  
+
+
 - coffee-script
-
-
-
-
-
+- title helper
+- fix sort order of json swatches
+- tests (rails tutorial)
+- validation (users, colors)
 - test 3.1 on heroku (migrate to cedar)
 - drag + drop colors
 - delete colors
 - favicon design
-- make it clear you can click the color picker
-- welcome message / blank slate
-- validate format of usernames (no dots)
-- shorter urls for users /:username or /u/:username
-- how to make home / profile difference clear?
-- backbone - coffeescript! / ajax
+- welcome message / blank slate / getting started (color picker callout)
+- twitter routes /:username
+- how to make home / profile difference more clear?
 - cross-browser check, CSS3
 - set color picker value when click on swatch + focus (copy to clipboard? > flash)
-- signup user flow > state for no swatches
-- write README
-- How to license OS rails app?
-- devise for login
+- rails 3.1 / devise for login
+- move strings to locale file

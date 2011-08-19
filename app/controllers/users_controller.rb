@@ -10,10 +10,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by_username(params[:id])
-    @swatches = @user.swatches.all(:order => 'created_at DESC', :include => :color)
-    # @swatches = @user.swatches.all
-    
-    @swatch = Swatch.new if signed_in?    
+    @swatch = Swatch.new if signed_in?
     @title = @user.username
     @page_id = "profile"
   end
@@ -31,27 +28,27 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "welcome to paintbox.es"
-      redirect_to @user
+      flash[:success] = t(:"flash.welcome")
+      redirect_to user_path(@user.username)
     else
-      flash[:error] = "error"
+      flash[:error] = t(:"flash.error")
       render "new"
     end
   end
   
   def update
     if @user.update_attributes(params[:user])
-      flash[:success] = "profile udpated"
-      redirect_to @user
+      flash[:success] = t(:"flash.profile_updated")
+      redirect_to user_path(@user.username)
     else
-      flash[:error] = "error"      
+      flash[:error] = t(:"flash.error")
       render "edit"
     end
   end
   
   def destroy    
     User.find_by_username(params[:id]).destroy        
-    flash[:success] = "user deleted"
+    flash[:success] = t(:"flash.user_deleted")
     redirect_to users_path
   end
   

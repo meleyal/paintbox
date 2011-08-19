@@ -11,24 +11,14 @@ class User < ActiveRecord::Base
   validates_presence_of     :username
   validates_length_of       :username, :maximum => 50
   validates_format_of       :username, :with => /\A[a-z]+\z/
-  validates_uniqueness_of   :username, :case_sensitive => true
-  
+  validates_uniqueness_of   :username, :case_sensitive => true  
   validates_presence_of     :email
   validates_format_of       :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates_uniqueness_of   :email, :case_sensitive => true
-
   validates_presence_of     :password
   validates_length_of       :password, :within => 6..40
   validates_confirmation_of :password
-
   before_save               :encrypt_password
-
-
-  # class methods
-
-  # def self.find_by_identifier(identifier)
-  #   User.where(['id = ? OR username = ?', identifier, identifier]).first()      
-  # end
 
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)
@@ -40,19 +30,8 @@ class User < ActiveRecord::Base
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
   end
-
-  # instance methods?
-
-  def to_param 
-    # "#{id}-#{username}"
-    # username || id
-    username
-    # "#{self.username}"
-  end
   
-  # return true if stored password matches submitted password
   def has_password?(submitted_password)
-    # compare encrypted_password with the encrypted version of submitted_password
     encrypted_password == encrypt(submitted_password)
   end
   
@@ -60,8 +39,7 @@ class User < ActiveRecord::Base
     self.remember_token = encrypt("#{salt}--#{id}--#{Time.now.utc}")
     save_without_validation
   end
-      
-      
+            
   private
   
     def encrypt_password

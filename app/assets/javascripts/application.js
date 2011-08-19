@@ -10,3 +10,4 @@
 //= require jquery.ba-serializeobject.min.js
 //= require jscolor/jscolor.js
 //= require_tree .
+
