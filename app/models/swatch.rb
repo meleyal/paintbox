@@ -3,7 +3,8 @@ class Swatch < ActiveRecord::Base
   belongs_to :user
   belongs_to :color
 
-  scope :recent, limit(500).order('created_at desc')
+  default_scope order('created_at desc')
+  scope :recent, limit(500)
 
   # has_one :color
   # validates_presence_of :user_id, :color_id

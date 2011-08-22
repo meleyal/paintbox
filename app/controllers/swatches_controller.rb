@@ -1,11 +1,15 @@
 class SwatchesController < ApplicationController
 
   # before_filter :authenticate
+  # before_filter :get_parent
 
   def index
     @user = User.find_by_username(params[:user_id])
-    @swatches = @user.swatches.to_json(:order => 'created_at desc', :include => :color)
-    render :json => @swatches
+    @swatches = @user.nil? ? Swatch.all : @user.swatches
+    respond_to do |format|
+      format.html
+      format.json { render json: @swatches.to_json(:include => :color) }
+    end
   end
   
   def create    
@@ -21,5 +25,11 @@ class SwatchesController < ApplicationController
     swatch.update_attributes! params
     render :json => swatch
   end
+
+private
+
+  # def get_parent
+  #   @user ||= User.find_by_username(params[:user_id])
+  # end
 
 end
