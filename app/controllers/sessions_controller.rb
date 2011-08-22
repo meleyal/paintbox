@@ -1,16 +1,9 @@
 class SessionsController < ApplicationController
-
-  def new
-    @title = "login"
-  end
   
   def create
-    user = User.authenticate(params[:session][:email],
-                             params[:session][:password])
-        
+    user = User.authenticate(params[:session][:email], params[:session][:password])
     if user.nil?
       flash.now[:error] = t(:"flash.sign_in_error")
-      @title = "sign in"
       render "new"
     else
       sign_in user

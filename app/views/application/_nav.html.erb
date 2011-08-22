@@ -1,0 +1,17 @@
+<% if (current_user && current_user.admin?) %>
+<nav class="admin">
+  <strong>Admin:</strong> <%= link_to t("users"), users_path, :class => "admin" %>
+</nav>
+<% end %>
+
+<nav>
+  <% if signed_in? %>
+  <%= link_to t("profile"), user_path(current_user.username) %> /        
+  <%= link_to t("settings"), settings_path %> /        
+  <%= link_to t("logout"), logout_path, :method => :delete %> /
+  <% else %>
+  <%= link_to t("login"), login_path %> / 
+  <%= link_to t("signup"), signup_path %> /
+  <% end %>
+  <%= link_to t("about"), 'https://github.com/meleyal/paintbox#readme' %>
+</nav>

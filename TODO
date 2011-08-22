@@ -1,6 +1,39 @@
 TODO:
 
 
+- rewrite
+
+no rails rendering
+rails is only json api
+
+
+root = swatches index
+
+
+
+get swatches from /users/meleyal/swatches
+
+api.paintbox.es/users/meleyal/swatches
+
+
+or (with authed user)
+
+get swatches from /user/swatches
+
+api.paintbox.es/users/swatches
+
+
+
+does it need to a separate api?
+api = request with .json
+
+
+
+
+
+
+
+
 - api design
 
   http basic vs OAuth
@@ -27,6 +60,10 @@ TODO:
   get swatches for current user
   
 
+
+- Refine design
+    baconfile.com
+    twitter bootstrap
 
 - coffee-script
 - title helper

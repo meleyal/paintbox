@@ -4,40 +4,20 @@
   <meta charset="utf-8">  
   <%= csrf_meta_tag %>  
 
-  <title>paintbox.es <%= page_title %></title>
-  <link rel="icon" href="/assets/favicon.png" type="image/png"> 
+  <title>paintbox.es <%= yield :page_title %></title>
+
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
 </head>
 
-<body id="<%= @page_id %>" data-id="<%= params[:id] %>">
+<body id="<%= yield :page_id %>" data-id="<%= params[:id] %>">
 
   <div id="wrap">
 
     <header>
-      <h1><%= link_to("paintbox.es", root_path) %> <%= page_title %></h1>
-
-      <% flash.each do |key, value| %>
-      <p class="flash <%= key %>"><%= value %></p>
-      <% end %>
-
-      <% if (current_user && current_user.admin?) %>
-      <nav class="admin">
-        <strong>Admin:</strong> <%= link_to "Users", users_path, :class => "admin" %>
-      </nav>
-      <% end %>
-
-      <nav>
-        <% if signed_in? %>
-        <%= link_to "Profile", user_path(current_user.username) %> /        
-        <%= link_to "Settings", settings_path %> /        
-        <%= link_to "Logout", logout_path, :method => :delete %> /
-        <% else %>
-        <%= link_to "Login ", login_path %> / 
-        <%= link_to "Sign up", signup_path %> /
-        <% end %>
-        <%= link_to "About", 'https://github.com/meleyal/paintbox#readme' %>
-      </nav>      
+      <h1><%= link_to("paintbox.es", root_path) %> <%= yield :page_title %></h1>
+      <%= render "flash" %>
+      <%= render "nav" %>
     </header>
 
     <section id="content" class="group">

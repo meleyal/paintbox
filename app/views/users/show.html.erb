@@ -1,9 +1,8 @@
+<% page_title @user.username %>
+<% page_id "profile" %>
+
 <% if signed_in? && (@user == current_user) %>
   <%= render 'swatches/form' %>
 <% end %>  
 
-<%# unless @user.swatches.empty? %>
-  <ul id="paintbox">
-    <%# render @swatches %>    
-  </ul>  
-<%# end %>
+<ul id="paintbox"></ul>

@@ -15,6 +15,10 @@ ul {
 	padding-left: 1em;
 }
 
+h1 {
+	text-transform: lowercase;
+}
+
 h1 a {
 	text-decoration: none;
 	padding: 5px 0;
@@ -89,13 +93,13 @@ form input[type="password"] {
 	margin: 3em 0;
 }
 
-#new_swatch {
+#new-swatch {
 	position: absolute;
 	top: 40px;
 	right: 0;
 }
 
-#new_swatch input {
+#new-swatch input {
 	font-size: 14px;
 	padding: 6px;
 	border: 0;
@@ -103,7 +107,7 @@ form input[type="password"] {
 	border: 1px solid #eee;
 }
 
-#new_swatch input[type="text"] {
+#new-swatch input[type="text"] {
 	width: 100px;
 }
 
