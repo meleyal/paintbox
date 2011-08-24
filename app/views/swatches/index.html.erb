@@ -1,3 +1,9 @@
-<ul id="paintbox">
-  <%= render  :partial => 'swatches/swatch', :collection => @swatches, :locals => { :link => true } %>
-</ul>
+<ul id="paintbox"></ul>
+
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      app.collections.swatches.reset(<%= raw @swatches.to_json(:include => :color) %>);      
+    })
+  </script>
+<% end %>

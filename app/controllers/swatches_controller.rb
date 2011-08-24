@@ -5,7 +5,7 @@ class SwatchesController < ApplicationController
 
   def index
     @user = User.find_by_username(params[:user_id])
-    @swatches = @user.nil? ? Swatch.all : @user.swatches
+    @swatches = @user.nil? ? Swatch.recent : @user.swatches
     respond_to do |format|
       format.html
       format.json { render json: @swatches.to_json(:include => :color) }

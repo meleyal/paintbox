@@ -1,6 +1,19 @@
 TODO:
 
 
+- convert swatches#index (home page) to use BB
+
+template for swatch (+ link to user)
+
+options
+
+jq templates
+
+
+
+
+
+
 - rewrite
 
 no rails rendering

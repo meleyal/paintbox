@@ -8,6 +8,7 @@
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :javascripts %>
 </head>
 
 <body id="<%= yield :page_id %>" data-id="<%= params[:id] %>">
