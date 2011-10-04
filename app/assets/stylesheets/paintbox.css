@@ -28,7 +28,7 @@ h1 a:hover {
 	border-bottom: 1px dotted #aaa;
 }
 
-a {
+a, a:visited {
 	color: #000;
 }
 
@@ -44,7 +44,8 @@ nav {
 	border-radius: 0 0 4px 4px;
 }
 
-nav a {
+nav a,
+nav a:visited {
 	color: #aaa;
 	text-decoration: none;
 }
