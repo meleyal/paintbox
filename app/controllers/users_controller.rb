@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by_username(params[:id])
+    @swatches = @user.swatches
     @swatch = Swatch.new if signed_in?
   end
   

@@ -94,13 +94,13 @@ form input[type="password"] {
 	margin: 3em 0;
 }
 
-#new-swatch {
+#picker {
 	position: absolute;
 	top: 40px;
 	right: 0;
 }
 
-#new-swatch input {
+#picker input {
 	font-size: 14px;
 	padding: 6px;
 	border: 0;
@@ -108,7 +108,7 @@ form input[type="password"] {
 	border: 1px solid #eee;
 }
 
-#new-swatch input[type="text"] {
+#picker input[type="text"] {
 	width: 100px;
 }
 

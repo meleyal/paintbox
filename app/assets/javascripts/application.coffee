@@ -10,8 +10,8 @@
 #= require jquery.ba-serializeobject.min.js
 #= require jscolor/jscolor.js
 
-# require_self
 #= require initialize
 #= require_tree ./models
 #= require_tree ./collections
 #= require_tree ./views
+#= require_tree ./templates

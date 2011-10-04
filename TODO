@@ -1,96 +1,21 @@
 TODO:
 
 
-- convert swatches#index (home page) to use BB
-
-template for swatch (+ link to user)
-
-options
-
-jq templates
+- template for swatch (+ link to user)
 
 
 
 
 
-
-- rewrite
-
-no rails rendering
-rails is only json api
-
-
-root = swatches index
-
-
-
-get swatches from /users/meleyal/swatches
-
-api.paintbox.es/users/meleyal/swatches
-
-
-or (with authed user)
-
-get swatches from /user/swatches
-
-api.paintbox.es/users/swatches
-
-
-
-does it need to a separate api?
-api = request with .json
-
-
-
-
-
-
-
-
-- api design
-
-  http basic vs OAuth
-    
-  All API access is over HTTPS, 
-  and accessed from the api.paintbox.es domain. 
-  All data is sent and received as JSON.
-  
-  paintbox.es/api/method
-  api.paintbox.es/method
-
-  public
-    GET /swatches
-    GET /users/:user/swatches
-    GET /colors
-    
-  auth
-    GET     /user/swatches
-    POST    /user/swatches (single or array)
-    DELETE  /user/swatches (single or array)
-    
-
-
-  get swatches for current user
-  
-
-
-- Refine design
-    baconfile.com
-    twitter bootstrap
-
-- coffee-script
-- title helper
+- better way of setting user url
 - fix sort order of json swatches
-- tests (rails tutorial)
+- test 3.1 on heroku (migrate to cedar)  
+- title helper
 - validation (users, colors)
-- test 3.1 on heroku (migrate to cedar)
 - drag + drop colors
 - delete colors
-- favicon design
 - welcome message / blank slate / getting started (color picker callout)
 - twitter routes /:username
-- how to make home / profile difference more clear?
-- cross-browser check, CSS3
 - set color picker value when click on swatch + focus (copy to clipboard? > flash)
-- rails 3.1 / devise for login
+- devise for login
 - move strings to locale file

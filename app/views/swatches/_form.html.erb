@@ -1,5 +1,6 @@
-<div id="new-swatch">
-<%= fields_for @swatch do |f| %>
+<div id="picker">
+
+<%= form_for @swatch do |f| %>
 
   <%= f.fields_for :colors do |c| %>
   <p>
@@ -8,4 +9,5 @@
   <% end %>
 
 <% end %>
+
 </div>

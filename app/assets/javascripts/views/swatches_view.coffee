@@ -1,15 +1,16 @@
 class window.SwatchesView extends Backbone.View
-	
-	el: '#paintbox'
 
-	initialize: ->
-		app.collections.swatches.bind 'add', @addOne
-		app.collections.swatches.bind 'reset', @addAll
-		@addAll()
+  el: '#paintbox'
 
-	addOne: (swatch) =>
-		view = new SwatchView model: swatch
-		$(@el).append view.el
+  initialize: ->
+    app.collections.swatches.bind 'add', @addOne
+    app.collections.swatches.bind 'reset', @addAll
+    @addAll()
 
-	addAll: =>
-		app.collections.swatches.each @addOne
+  addOne: (swatch) =>
+    view = new SwatchView model: swatch
+    $(@el).append view.el
+
+  addAll: =>
+    $(@el).empty()
+    app.collections.swatches.each @addOne

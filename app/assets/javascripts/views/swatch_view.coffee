@@ -1,11 +1,11 @@
 class window.SwatchView extends Backbone.View
-	
-	tagName: 'li'
 
-	className: 'swatch'
+  tagName: 'li'
 
-	initialize: ->
-		@render()
+  className: 'swatch'
 
-	render: ->
-		$(@el).css('background', @model.get('color').value)
+  initialize: ->
+    @render()
+
+  render: ->
+    $(@el).css('background', @model.get('color').value)
