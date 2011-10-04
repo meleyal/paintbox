@@ -7,7 +7,7 @@ app.views = {}
 $(document).ready ->
   app.initialize = ->
     app.collections.swatches = new Swatches()
-    app.views.swatches = new SwatchesView()
+    app.views.swatches = new SwatchesView({ collection: app.collections.swatches })
 
     if $('body').is('#profile')
       user = $('body').data('id')

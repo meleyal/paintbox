@@ -2,9 +2,10 @@ class window.SwatchesView extends Backbone.View
 
   el: '#paintbox'
 
-  initialize: ->
-    app.collections.swatches.bind 'add', @addOne
-    app.collections.swatches.bind 'reset', @addAll
+  initialize: (options) ->
+    @collection = options.collection
+    @collection.bind 'add', @addOne
+    @collection.bind 'reset', @addAll
     @addAll()
 
   addOne: (swatch) =>
@@ -13,4 +14,4 @@ class window.SwatchesView extends Backbone.View
 
   addAll: =>
     $(@el).empty()
-    app.collections.swatches.each @addOne
+    @collection.each @addOne
