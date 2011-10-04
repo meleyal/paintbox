@@ -1,7 +1,7 @@
 class Color < ActiveRecord::Base
 
-  has_many :swatches
-  
+  # has_many :swatches
+
   # validates_presence_of :value
   # validates_length_of :value, :within => 4..7
   # validates_uniqueness_of :value, :case_sensitive => false
