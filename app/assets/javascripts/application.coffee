@@ -7,11 +7,11 @@
 #= require jquery
 #= require jquery_ujs
 #= require backbone-rails
-#= require jquery.ba-serializeobject.min.js
-#= require jscolor/jscolor.js
+#= require jquery.ba-serializeobject.min
+#= require jquery.tipsy
+#= require jscolor/jscolor
 
-#= require initialize
 #= require_tree ./models
 #= require_tree ./collections
-#= require_tree ./views
 #= require_tree ./templates
+#= require_tree ./views

@@ -115,9 +115,15 @@ form input[type="password"] {
 	padding: 0;
 }
 
-#paintbox li {
-	list-style: none;
+/* .classes
+------------------------------------------- */
+
+.swatch {
+  list-style: none;
 	float: left;
+}
+
+.swatch span {
 	display: block;
 	background: #eee;
 	text-indent: -999em;
@@ -125,20 +131,16 @@ form input[type="password"] {
 	height: 30px;
 	width: 30px;	
 	margin: 0 5px 5px 0;
-	-webkit-border-radius: 20px;	
+	-webkit-border-radius: 50%;	
 	   -moz-border-radius: 50%;	
 	        border-radius: 50%;
-
 }
 
-#paintbox li a {
+.swatch a {
 	display: block;
 	height: 100%;
 	width: 100%;
 }
-
-/* .classes
-------------------------------------------- */
 
 .or, .or a {
 	font-size: 12px;
@@ -176,4 +178,19 @@ nav.admin {
 
 .flash.error {
 	background: #E56757;
+}
+
+.tipsy {
+  font-size: 12px;
+}
+
+.group:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
 }

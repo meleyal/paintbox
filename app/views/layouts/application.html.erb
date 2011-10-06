@@ -4,11 +4,9 @@
   <meta charset="utf-8">  
   <%= csrf_meta_tag %>  
 
-  <title>paintbox.es <%= yield :page_title %></title>
+  <title>paintbox <%= yield :page_title %></title>
 
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= yield :javascripts %>
+  <%= stylesheet_link_tag "application" %>
 </head>
 
 <body id="<%= yield :page_id %>" data-id="<%= params[:id] %>">
@@ -16,7 +14,7 @@
   <div id="wrap">
 
     <header>
-      <h1><%= link_to("paintbox.es", root_path) %> <%= yield :page_title %></h1>
+      <h1><%= link_to("paintbox", root_path) %> <%= yield :page_title %></h1>
       <%= render "flash" %>
       <%= render "nav" %>
     </header>
@@ -25,7 +23,9 @@
       <%= yield %>
     </section>
 
-  </div><!--/wrap-->
+  </div>
 
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascripts %>
 </body>
 </html>

@@ -8,9 +8,5 @@
 <ul id="paintbox"></ul>
 
 <% content_for :javascripts do %>
-  <script>
-    $(document).ready(function(){
-      app.collections.swatches.reset(<%= raw @swatches.to_json(:include => :color) %>);
-    })
-  </script>
+  <%= javascript_include_tag "profile" %>
 <% end %>

@@ -1,5 +1,7 @@
 class Swatch < ActiveRecord::Base
 
+  include Rails.application.routes.url_helpers
+
   belongs_to :user
   belongs_to :color
 
@@ -10,5 +12,13 @@ class Swatch < ActiveRecord::Base
   default_scope :order => :position
   accepts_nested_attributes_for :color
   validates_associated :color
+
+  def as_json(options = {})
+    json = { 
+      :color => color.value,
+      :user => user.username,
+      :url => user_path(user.username)
+    }
+  end
 
 end

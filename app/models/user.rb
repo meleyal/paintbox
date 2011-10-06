@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   attr_accessor   :password
   attr_accessible :username, :email, :password, :password_confirmation
 
+  # scope :public, select('username')
+
   validates_presence_of     :username
   validates_length_of       :username, :maximum => 50
   validates_format_of       :username, :with => /\A[a-z]+\z/

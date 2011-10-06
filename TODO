@@ -1,22 +1,17 @@
 TODO:
 
 
-- template for swatch (+ tooltip, link to user)
+- set color picker value when click on swatch + focus (copy to clipboard? > flash)
 
 
 
 
-- show activity on create/ajax
-- better way of setting user url
-- replace password gen with rails 3 secure password (railscast)
-✓ fix sort order of json swatches
-- test 3.1 on heroku (migrate to cedar)  
-- title helper
-- validation (users, colors)
+- welcome message / blank slate / getting started (color picker callout)
 - drag + drop colors
 - delete colors
-- welcome message / blank slate / getting started (color picker callout)
-- twitter routes /:username
-- set color picker value when click on swatch + focus (copy to clipboard? > flash)
-- devise for login
-- move strings to locale file
+- test 3.1 on heroku (migrate to cedar)  
+- show activity on create/ajax
+- better way of setting user url
+- validation (users, colors)
+- use rails3 secure passwords
+- title helper

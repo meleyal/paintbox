@@ -1,0 +1,5 @@
+<span style="background-color:<%= @swatch.color %>">
+  <% if @swatch.link: %>
+  <a href="<%= @swatch.url %>" title="<%= @swatch.user %>"></a>
+  <% end %>
+</span>
