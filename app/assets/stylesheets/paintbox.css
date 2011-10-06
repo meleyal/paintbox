@@ -3,6 +3,7 @@
 
 body {
 	font-family: Helvetica;
+	color: #333;
 	margin: 0;
 	padding: 0;
 }
@@ -16,12 +17,13 @@ ul {
 }
 
 h1 {
-	text-transform: lowercase;
+  font-size: 32px;
+  letter-spacing: -2px;
 }
 
 h1 a {
 	text-decoration: none;
-	padding: 5px 0;
+  padding: 5px 0;
 }
 
 h1 a:hover {
@@ -29,24 +31,27 @@ h1 a:hover {
 }
 
 a {
-	color: #000;
+	color: #333;
 }
 
 nav {
-	background: #fafafa;
-	padding: 6px 10px;
+	font-size: 80%;
+  font-weight: bold;
+	color: #ccc;
+	padding: 10px 0;
 	position: absolute;
 	right: 0;
 	top: 0;
-	font-size: 80%;
-	float: right;
-	color: #aaa;
-	border-radius: 0 0 4px 4px;
 }
 
 nav a {
-	color: #aaa;
+	color: #ccc;
 	text-decoration: none;
+	-webkit-transition: color .2s;
+}
+
+nav a:hover {
+  color: #333;
 }
 
 form ol {

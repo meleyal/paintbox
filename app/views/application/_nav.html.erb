@@ -1,4 +1,4 @@
-<% if (current_user && current_user.admin?) %>
+<% if false #(current_user && current_user.admin?) %>
 <nav class="admin">
   <strong>Admin:</strong> <%= link_to t("users"), users_path, :class => "admin" %>
 </nav>
@@ -6,7 +6,7 @@
 
 <nav>
   <% if signed_in? %>
-  <%= link_to t("profile"), user_path(current_user.username) %> /        
+  <%= link_to t("Me"), user_path(current_user.username) %> /
   <%= link_to t("settings"), settings_path %> /        
   <%= link_to t("logout"), logout_path, :method => :delete %> /
   <% else %>

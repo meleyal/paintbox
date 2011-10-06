@@ -14,4 +14,5 @@ TODO:
 - better way of setting user url
 - validation (users, colors)
 - use rails3 secure passwords
+- web sockets / server sent events for realtime recent
 - title helper
