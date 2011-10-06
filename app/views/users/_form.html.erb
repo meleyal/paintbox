@@ -5,7 +5,10 @@
     <%= f.input :email %>    
     <%= f.input :password %>    
     <%= f.input :password_confirmation, :label => "Password confirmation", :required => true %>    
-    <%= f.button :submit %>    
+    <%= f.button :submit %> 
+    <% if @user.new_record? %>
+    <span class="or">or <%= link_to t("login"), login_path %></span>
+    <% end %>
   </ol>
 
 <% end %>

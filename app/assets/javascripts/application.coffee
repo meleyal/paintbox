@@ -11,7 +11,10 @@
 #= require jquery.tipsy
 #= require jscolor/jscolor
 
+#= require_self
 #= require_tree ./models
 #= require_tree ./collections
 #= require_tree ./templates
 #= require_tree ./views
+
+$('.flash').delay(6000).fadeOut()
