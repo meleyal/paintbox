@@ -3,28 +3,21 @@
 <head>
   <meta charset="utf-8">  
   <%= csrf_meta_tag %>  
-
   <title>paintbox <%= yield :page_title %></title>
-
   <%= stylesheet_link_tag "application" %>
 </head>
 
 <body id="<%= yield :page_id %>" data-id="<%= params[:id] %>">
-
   <div id="wrap">
-
     <header>
       <h1><%= link_to("paintbox", root_path) %> <%= yield :page_title %></h1>
       <%= render "flash" %>
       <%= render "nav" %>
     </header>
-
     <section id="content" class="group">
       <%= yield %>
     </section>
-
   </div>
-
   <%= javascript_include_tag "application" %>
   <%= yield :javascripts %>
 </body>

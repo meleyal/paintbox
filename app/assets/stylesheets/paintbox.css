@@ -19,6 +19,7 @@ ul {
 h1 {
   font-size: 32px;
   letter-spacing: -2px;
+  text-transform: lowercase;
 }
 
 h1 a {
@@ -186,7 +187,8 @@ nav.admin {
 }
 
 .tipsy {
-  font-size: 12px;
+  font-family: Verdana;
+  font-size: 11px;
 }
 
 .group:after {

@@ -1,12 +1,11 @@
 en:
-  login: "Login"
-  signup: "Signup"
-  profile: "Profile"
+  me: "Me"
   settings: "Settings"
+  login: "Login"
   logout: "Logout"
+  signup: "Signup"
   about: "About"
   users: "Users"
-
   flash:
     sign_in: "Hello!"
     sign_out: "Bye!"
