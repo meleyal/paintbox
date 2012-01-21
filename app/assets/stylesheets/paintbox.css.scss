@@ -20,15 +20,13 @@ h1 {
   font-size: 32px;
   letter-spacing: -2px;
   text-transform: lowercase;
-}
-
-h1 a {
-	text-decoration: none;
-  padding: 5px 0;
-}
-
-h1 a:hover {
-	border-bottom: 1px dotted #aaa;
+  a {
+  	text-decoration: none;
+    padding: 5px 0;
+    &:hover {
+    	border-bottom: 1px dotted #aaa;
+    }
+  }
 }
 
 a {
@@ -43,45 +41,43 @@ nav {
 	position: absolute;
 	right: 0;
 	top: 0;
+	a {
+  	color: #ccc;
+  	text-decoration: none;
+  	-webkit-transition: color .2s;
+  	&:hover {
+      color: #333;
+    }
+  }
 }
 
-nav a {
-	color: #ccc;
-	text-decoration: none;
-	-webkit-transition: color .2s;
-}
-
-nav a:hover {
-  color: #333;
-}
-
-form ol {
-	padding: 0;
-	list-style: none;
-}
-
-form li {
-	margin-bottom: 1em;
-}
-
-form .input .error {
-	color: #E56757;
-	font-size: 11px;
-	font-weight: bold;
-	text-transform: uppercase;	
-}
-
-form .input label {
-	display: block;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
-	width: 300px;
-	margin-right: 15px;
-	padding: 4px;
-	font-size: 12px;
+form {
+  ol {
+  	padding: 0;
+  	list-style: none;
+  }
+  li {
+  	margin-bottom: 1em;
+  }
+  .input {
+    .error {
+    	color: #E56757;
+    	font-size: 11px;
+    	font-weight: bold;
+    	text-transform: uppercase;	
+    }
+    label {
+    	display: block;
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+  	width: 300px;
+  	margin-right: 15px;
+  	padding: 4px;
+  	font-size: 12px;
+  }
 }
 
 /* #ids
@@ -103,18 +99,16 @@ form input[type="password"] {
 	position: absolute;
 	top: 40px;
 	right: 0;
-}
-
-#picker input {
-	font-size: 14px;
-	padding: 6px;
-	border: 0;
-	background: #eee;
-	border: 1px solid #eee;
-}
-
-#picker input[type="text"] {
-	width: 100px;
+	input {
+  	font-size: 14px;
+  	padding: 6px;
+  	border: 0;
+  	background: #eee;
+  	border: 1px solid #eee;
+  }
+  input[type="text"] {
+  	width: 100px;
+  }
 }
 
 #paintbox {
@@ -127,25 +121,23 @@ form input[type="password"] {
 .swatch {
   list-style: none;
 	float: left;
-}
-
-.swatch span {
-	display: block;
-	background: #eee;
-	text-indent: -999em;
-	overflow: hidden;
-	height: 30px;
-	width: 30px;	
-	margin: 0 5px 5px 0;
-	-webkit-border-radius: 50%;	
-	   -moz-border-radius: 50%;	
-	        border-radius: 50%;
-}
-
-.swatch a {
-	display: block;
-	height: 100%;
-	width: 100%;
+	span {
+  	display: block;
+  	background: #eee;
+  	text-indent: -999em;
+  	overflow: hidden;
+  	height: 30px;
+  	width: 30px;	
+  	margin: 0 5px 5px 0;
+  	-webkit-border-radius: 50%;	
+  	   -moz-border-radius: 50%;	
+  	        border-radius: 50%;
+  }
+  a {
+  	display: block;
+  	height: 100%;
+  	width: 100%;
+  }
 }
 
 .or, .or a {
@@ -160,7 +152,7 @@ form input[type="password"] {
 	text-transform: uppercase;
 }
 
-nav.admin {
+.admin {
 	right: 250px;
 }
 
@@ -176,14 +168,12 @@ nav.admin {
 	font-weight: bold;
 	text-transform: uppercase;	
 	color: white;	
-}
-
-.flash.success {
-	background: #7AF35E;
-}
-
-.flash.error {
-	background: #E56757;
+	&.success {
+  	background: #7AF35E;
+  }
+  &.error {
+  	background: #E56757;
+  }
 }
 
 .tipsy {
