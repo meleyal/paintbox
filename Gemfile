@@ -18,6 +18,9 @@ end
 group :development do
   gem 'heroku'
   gem 'sqlite3'
+  gem "wirble"
+  gem "hirb"
+  gem "awesome_print"
 end
 
 group :production do
