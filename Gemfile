@@ -4,8 +4,7 @@ gem 'rails', '3.1.0'
 gem 'simple_form'
 gem 'faker'
 gem 'jquery-rails'
-gem 'backbone-rails'
-gem 'eco'
+gem 'backbone-on-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,6 +16,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'taps'
   gem 'sqlite3'
   gem "wirble"
   gem "hirb"

@@ -6,7 +6,8 @@
 #
 #= require jquery
 #= require jquery_ujs
-#= require backbone-rails
+#= require underscore
+#= require backbone
 #= require jquery.ba-serializeobject.min
 #= require jquery.tipsy
 #= require jscolor/jscolor
