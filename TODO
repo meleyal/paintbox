@@ -4,7 +4,6 @@ TODO:
 - welcome message / blank slate / getting started (color picker callout)
 - drag + drop colors
 - delete colors
-- test 3.1 on heroku (migrate to cedar)  
 - show activity on create/ajax
 - better way of setting user url
 - validation (users, colors)
