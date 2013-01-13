@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'simple_form'
+gem 'simple_form', '~> 1.0'
 gem 'faker'
 gem 'jquery-rails'
 gem 'backbone-on-rails'
